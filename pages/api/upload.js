@@ -13,7 +13,7 @@ export default async (req, res) => {
   const params = {
     Bucket: process.env.S3_BUCKET,
     Key: req?.body?.filename,
-    ContentType: req.body?.ContentTypecontentType,
+    ContentType: req.body?.contentType,
     Expires: 90000,
   };
 
@@ -25,7 +25,7 @@ export default async (req, res) => {
     url,
     fields: {},
     headers: {
-      "content-type": req.body?.ContentTypecontentType,
+      "content-type": req.body?.contentType,
     },
   });
 };
